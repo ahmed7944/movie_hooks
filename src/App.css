@@ -1,0 +1,18 @@
+body {
+  background: #141414;
+  color: #ffffff;
+}
+.app > .row{
+overflow-x: auto;
+flex-wrap: nowrap;
+}
+img{
+  width: 350px;
+  height: 350px;
+}
+.text_justify{
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
