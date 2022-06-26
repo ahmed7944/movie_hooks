@@ -5,8 +5,12 @@ import MovieList from './components/MovieList';
 import Filter from './components/Filter';
 import AddMovie from './components/AddMovie';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Rating } from 'react-simple-star-rating'
-
+import { Rating } from 'react-simple-star-rating';
+import { Routes, Route} from 'react-router-dom'
+import Description from './Description';
+import Trailer from './Trailer';
+import  Navbar  from './Navbar'
+import Movie from './components/Movie';
 
 
 function App() {
@@ -26,14 +30,14 @@ function App() {
     Title: 'spider man',
     Description: 'man (2)',
     Rating: '50',
-    Url:"https://tse3.mm.bing.net/th?id=OIP.jGgpUrGr_AVWVDm8cKLUGwHaEK&pid=Api&P=0&w=290&h=163",
+    Url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBMqfKLHul_my_ryG5YUb9M01JC_fBTcOIyQ&usqp=CAU",
     Posterurl:'https://www.youtube.com/watch?v=DzYsxuYmxSE'  
   },
   {
     Title: 'spider man',
     Description: 'man (3)',
     Rating: '40',
-    Url:"https://tse3.mm.bing.net/th?id=OIP.jGgpUrGr_AVWVDm8cKLUGwHaEK&pid=Api&P=0&w=290&h=163",
+    Url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE-bGoVxo_AB2FT_pSHPEwg0__RABcx8BRmg&usqp=CAU",
     Posterurl:'https://www.youtube.com/watch?v=C6pSkJqciEc'  
   },
   ]);
@@ -51,6 +55,14 @@ function App() {
   return (
     <div className="App">
       <div className='row'>
+      <Navbar/>
+        <Routes>
+            <Route path='/' element={<Description/>}></Route>
+            <Route path='/' element={<Trailer/>}></Route>
+          <Route path='/Movie' element={<Movie/>}>
+            
+          </Route>
+        </Routes>
       
       <Filter handleFilter={handleFilter}/>
       <Rating onClick={handleRating} ratingValue={rating} />
